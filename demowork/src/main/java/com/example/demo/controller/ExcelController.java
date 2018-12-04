@@ -25,7 +25,7 @@ public class ExcelController {
     private ExcelService excelService;
 
     @RequestMapping(value = "/importUser",method = RequestMethod.POST)
-    @ApiOperation(value = "导入用户信息【Jane】",notes = "上传用户信息")
+    @ApiOperation(value = "导入用户信息【Jane】 ",notes = "上传用户信息")
     public ResultModel<List<UserEX>> importUser(@ApiParam(name = "uploadFile" ,value = "导入文件") @RequestParam("uploadFile") MultipartFile uploadFile){
         final List<UserEX> listUser = excelService.importUser(uploadFile);
         return new ResultModel<List<UserEX>>(listUser,ResultModel.SUCCESS);
